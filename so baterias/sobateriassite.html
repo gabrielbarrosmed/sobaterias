@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Só Baterias — Entrega e instalação grátis em até 50 minutos em Ipatinga e região. Baterias Moura, Heliar, Tudor e muito mais.">
+    <title>Só Baterias — Entrega e Instalação GRÁTIS em até 50 minutos!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vermelho: #D9232E;
+            --vermelho-escuro: #b71c27;
+            --amarelo: #FFC400;
+            --amarelo-claro: #FFF8DC;
+            --amarelo-escuro: #e6b000;
+            --texto: #1A1A1A;
+            --texto-medio: #555555;
+            --branco: #FFFFFF;
+            --cinza-claro: #f7f7f7;
+            --cinza-borda: #e0e0e0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--texto);
+            background: var(--branco);
+        }
+
+        /* ===== TOP BAR ===== */
+        .topbar {
+            background: var(--vermelho);
+            color: rgba(255,255,255,0.92);
+            font-size: 12px;
+            padding: 8px 20px;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .topbar strong { color: var(--amarelo); }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: var(--vermelho);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 14px rgba(217,35,46,0.35);
+        }
+
+        .navbar-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .navbar-logo img {
+            height: 46px;
+            width: auto;
+            display: block;
+        }
+
+        .navbar-links {
+            display: flex;
+            list-style: none;
+            gap: 26px;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            transition: color 0.2s;
+        }
+
+        .navbar-links a:hover { color: var(--amarelo); }
+
+        .btn-nav {
+            background: var(--amarelo) !important;
+            color: var(--texto) !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 700 !important;
+            letter-spacing: 0.5px;
+            transition: background 0.2s !important;
+        }
+
+        .btn-nav:hover { background: var(--amarelo-escuro) !important; }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: var(--amarelo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--vermelho);
+        }
+
+        .hero-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 65px 20px 75px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-content { flex: 1; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--vermelho);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 60px;
+            line-height: 1.05;
+            letter-spacing: 1px;
+            color: var(--texto);
+            margin-bottom: 16px;
+        }
+
+        .hero-content h1 .vermelho { color: var(--vermelho); }
+        .hero-content h1 .branco-bg {
+            background: var(--vermelho);
+            color: #fff;
+            padding: 0 8px;
+        }
+
+        .hero-sub {
+            font-size: 15px;
+            color: rgba(26,26,26,0.7);
+            margin-bottom: 22px;
+            font-weight: 500;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+
+        .hero-tag {
+            background: rgba(217,35,46,0.1);
+            border: 1.5px solid var(--vermelho);
+            color: var(--vermelho);
+            padding: 5px 13px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        .hero-visual {
+            flex: 0 0 380px;
+            position: relative;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: 265px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 4px solid var(--vermelho);
+            display: block;
+        }
+
+        .hero-phone-badge {
+            position: absolute;
+            bottom: -14px;
+            left: 20px;
+            background: var(--vermelho);
+            color: #fff;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+            padding: 10px 22px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(217,35,46,0.45);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary {
+            display: inline-block;
+            background: var(--vermelho);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover { background: var(--vermelho-escuro); transform: translateY(-1px); }
+
+        .btn-yellow {
+            display: inline-block;
+            background: var(--amarelo);
+            color: var(--texto);
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-yellow:hover { background: var(--amarelo-escuro); transform: translateY(-1px); }
+
+        .btn-outline-dark {
+            display: inline-block;
+            background: transparent;
+            color: var(--texto);
+            padding: 13px 28px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid rgba(26,26,26,0.35);
+            cursor: pointer;
+            transition: border-color 0.2s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-outline-dark:hover { border-color: var(--texto); }
+
+        .btn-outline-white {
+            display: inline-block;
+            background: transparent;
+            color: #fff;
+            padding: 13px 28px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-outline-white:hover { border-color: var(--amarelo); color: var(--amarelo); }
+
+        .btn-white {
+            display: inline-block;
+            background: #fff;
+            color: var(--vermelho);
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.15s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-white:hover { opacity: 0.92; transform: translateY(-1px); }
+
+        .btn-yellow-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--amarelo);
+            padding: 13px 28px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid var(--amarelo);
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-yellow-outline:hover { background: var(--amarelo); color: var(--texto); }
+
+        /* ===== FACHADA MOBILE ===== */
+        .fachada-mobile {
+            display: none;
+        }
+
+        @media (max-width: 920px) {
+            .fachada-mobile {
+                display: block;
+                background: var(--amarelo);
+                padding: 0 20px 30px;
+            }
+
+            .fachada-mobile img {
+                width: 100%;
+                border-radius: 8px;
+                border: 4px solid var(--vermelho);
+                display: block;
+            }
+        }
+
+        /* ===== FEATURE STRIP ===== */
+        .feature-strip {
+            background: var(--branco);
+            border-bottom: 3px solid var(--amarelo);
+            padding: 22px 20px;
+        }
+
+        .feature-strip-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--texto);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 920px) {
+            .feature-strip {
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .feature-strip-inner {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                gap: 0;
+                animation: scroll-features 16s linear infinite;
+                width: max-content;
+            }
+
+            .feature-strip-inner:hover {
+                animation-play-state: paused;
+            }
+
+            .feature-item {
+                padding: 18px 28px;
+                border-right: 1px solid var(--cinza-borda);
+                flex-shrink: 0;
+            }
+        }
+
+        @keyframes scroll-features {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .feature-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--vermelho);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            flex-shrink: 0;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section { padding: 75px 20px; }
+
+        .section-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--vermelho);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 42px;
+            color: var(--texto);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--texto-medio);
+            font-size: 14px;
+            margin-bottom: 50px;
+            font-weight: 500;
+        }
+
+        /* ===== COMO FUNCIONA ===== */
+        .steps {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 240px;
+            max-width: 320px;
+            padding: 35px 25px;
+            background: var(--branco);
+            border: 2px solid var(--cinza-borda);
+            border-top: 4px solid var(--vermelho);
+            border-radius: 6px;
+            text-align: center;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .step:hover { box-shadow: 0 8px 24px rgba(217,35,46,0.12); transform: translateY(-3px); }
+
+        .step-num {
+            width: 58px;
+            height: 58px;
+            background: var(--vermelho);
+            color: #fff;
+            border-radius: 50%;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+        }
+
+        .step h3 {
+            font-size: 14px;
+            color: var(--texto);
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .step p { color: var(--texto-medio); line-height: 1.7; font-size: 13px; }
+
+        .cta-center {
+            text-align: center;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== NOSSAS BATERIAS ===== */
+        .baterias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        .bateria-card {
+            background: var(--branco);
+            border: 2px solid var(--cinza-borda);
+            border-radius: 6px;
+            padding: 28px 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+        }
+
+        .bateria-card:hover {
+            border-color: var(--vermelho);
+            box-shadow: 0 4px 16px rgba(217,35,46,0.12);
+            transform: translateY(-2px);
+        }
+
+        .bateria-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+
+        .bateria-card h3 {
+            font-size: 12px;
+            color: var(--texto);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            line-height: 1.4;
+        }
+
+        /* ===== MARCAS ===== */
+        .marcas {
+            background: var(--amarelo-claro);
+            border-top: 3px solid var(--amarelo);
+            border-bottom: 3px solid var(--amarelo);
+            padding: 50px 20px;
+            overflow: hidden;
+        }
+
+        .marcas-title {
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            color: var(--texto);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .marcas-sub {
+            text-align: center;
+            color: var(--texto-medio);
+            font-size: 13px;
+            margin-bottom: 35px;
+        }
+
+        .marcas-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marcas-wrapper::before,
+        .marcas-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .marcas-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, var(--amarelo-claro), transparent);
+        }
+
+        .marcas-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, var(--amarelo-claro), transparent);
+        }
+
+        .marcas-track {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            animation: scroll-marcas 24s linear infinite;
+            width: max-content;
+        }
+
+        .marcas-track:hover { animation-play-state: paused; }
+
+        .marcas-track img {
+            height: 40px;
+            width: auto;
+            opacity: 0.7;
+            filter: grayscale(100%);
+            transition: opacity 0.3s, filter 0.3s;
+            flex-shrink: 0;
+        }
+
+        .marcas-track img:hover { opacity: 1; filter: grayscale(0%); }
+
+        @keyframes scroll-marcas {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ===== SOBRE NÓS ===== */
+        .sobre { background: var(--vermelho); color: #fff; }
+
+        .sobre .section-label { color: var(--amarelo); }
+        .sobre .section-title { color: #fff; }
+        .sobre .section-sub { color: rgba(255,255,255,0.75); }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 45px;
+            border: 2px solid rgba(255,255,255,0.25);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .stat {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 32px 20px;
+            border-right: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.06);
+        }
+
+        .stat:last-child { border-right: none; }
+
+        .stat-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 52px;
+            color: var(--amarelo);
+            display: block;
+            line-height: 1;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            font-weight: 700;
+            opacity: 0.92;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .stat-desc { font-size: 11px; opacity: 0.65; display: block; margin-top: 4px; }
+
+        /* ===== DEPOIMENTOS ===== */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+            gap: 18px;
+        }
+
+        .review-card {
+            background: var(--branco);
+            border: 1.5px solid var(--cinza-borda);
+            border-left: 4px solid var(--vermelho);
+            border-radius: 6px;
+            padding: 24px;
+            transition: box-shadow 0.2s;
+        }
+
+        .review-card:hover { box-shadow: 0 4px 18px rgba(217,35,46,0.1); }
+
+        .review-stars { font-size: 15px; margin-bottom: 12px; letter-spacing: 1px; }
+        .review-author { font-weight: 700; color: var(--texto); font-size: 14px; margin-bottom: 2px; }
+        .review-date { font-size: 11px; color: #aaa; margin-bottom: 12px; }
+        .review-text { color: var(--texto-medio); line-height: 1.7; font-size: 13px; }
+
+        /* ===== NOSSA LOJA ===== */
+        .loja { background: var(--amarelo); }
+
+        .loja-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .loja-info { flex: 1; min-width: 260px; }
+
+        .loja-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--vermelho);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .loja-info h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 42px;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+            color: var(--texto);
+        }
+
+        .loja-sub { color: rgba(26,26,26,0.65); margin-bottom: 22px; font-size: 14px; }
+
+        .loja-address {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--texto);
+            font-size: 14px;
+            margin-bottom: 28px;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .loja-address-icon { color: var(--vermelho); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+        .loja-map-wrap {
+            flex: 1;
+            min-width: 280px;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 4px solid var(--vermelho);
+        }
+
+        .loja-map-wrap iframe { width: 100%; height: 100%; border: 0; }
+
+        /* ===== CIDADES ===== */
+        .cidades-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .cidade-pill {
+            background: var(--branco);
+            border: 2px solid var(--cinza-borda);
+            border-radius: 4px;
+            padding: 9px 20px;
+            font-weight: 700;
+            color: var(--texto);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .cidade-pill:hover { border-color: var(--vermelho); color: var(--vermelho); }
+        .cidade-pin { color: var(--vermelho); font-size: 14px; }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            background: var(--vermelho);
+            padding: 65px 20px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '⚡';
+            position: absolute;
+            font-size: 220px;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .cta-banner h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .cta-banner p { font-size: 15px; opacity: 0.9; margin-bottom: 4px; font-weight: 500; }
+
+        .cta-banner-btns {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .faq-item { border-bottom: 1.5px solid var(--cinza-borda); }
+
+        .faq-q {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--texto);
+            transition: color 0.2s;
+            user-select: none;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .faq-q:hover { color: var(--vermelho); }
+
+        .faq-icon {
+            font-size: 22px;
+            font-weight: 300;
+            color: var(--vermelho);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 15px;
+            line-height: 1;
+        }
+
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s;
+            color: var(--texto-medio);
+            line-height: 1.75;
+            font-size: 13px;
+        }
+
+        .faq-item.open .faq-a { max-height: 400px; padding-bottom: 18px; }
+        .faq-a ul { margin: 8px 0 0 18px; }
+        .faq-a ul li { margin-bottom: 3px; }
+
+        /* ===== GOOGLE REVIEW CTA ===== */
+        .google-cta {
+            text-align: center;
+            padding: 35px 20px;
+            background: var(--amarelo-claro);
+            border-top: 3px solid var(--amarelo);
+        }
+
+        .google-cta p { color: var(--texto-medio); margin-bottom: 14px; font-size: 14px; font-weight: 600; }
+
+        .btn-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--branco);
+            color: var(--texto);
+            padding: 11px 22px;
+            border: 1.5px solid var(--cinza-borda);
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: box-shadow 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-google:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.12); }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--vermelho);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px 28px;
+            text-align: center;
+            border-top: 5px solid var(--amarelo);
+        }
+
+        .footer-inner { max-width: 1160px; margin: 0 auto; }
+
+        .footer-logo { margin-bottom: 20px; }
+
+        .footer-logo img { height: 40px; width: auto; display: block; margin: 0 auto; }
+
+        .footer-links {
+            display: flex;
+            gap: 22px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--amarelo); }
+        .footer-copy { font-size: 11px; opacity: 0.5; }
+
+        /* ===== WHATSAPP FLOATING ===== */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+            z-index: 9999;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 26px rgba(37,211,102,0.6); }
+        .wa-float svg { width: 32px; height: 32px; fill: #fff; }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 920px) {
+            .navbar-links { display: none; }
+            .hamburger { display: flex; }
+            .navbar-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--vermelho-escuro);
+                padding: 15px 20px 20px;
+                gap: 16px;
+                border-top: 1px solid rgba(255,255,255,0.15);
+            }
+            .hero-inner { flex-direction: column; padding: 50px 20px 60px; }
+            .hero-visual { display: none; }
+            .hero-content h1 { font-size: 42px; }
+            .stats { flex-direction: column; }
+            .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+            .stat:last-child { border-bottom: none; }
+            .loja-inner { flex-direction: column; }
+            .loja-map-wrap { width: 100%; min-width: unset; }
+            .section-title { font-size: 32px; }
+            .cta-banner h2 { font-size: 34px; }
+        }
+
+        @media (max-width: 500px) {
+            .baterias-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+            .steps { flex-direction: column; align-items: center; }
+            .step { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+    ⚡ <strong>COBRIMOS QUALQUER OFERTA</strong> &nbsp;|&nbsp; Entrega grátis em até 50 min &nbsp;|&nbsp; <strong>📞 (31) 3827-8484</strong>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="navbar-inner">
+        <a href="#" class="navbar-logo">
+            <img src="branding_id_visual/logo hd.png" alt="Só Baterias">
+        </a>
+        <ul class="navbar-links" id="navLinks">
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#baterias">Nossas baterias</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="https://wa.me/5531999999999" class="btn-nav">Pedir agora</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <p class="hero-badge">✓ &nbsp;Antes da troca, a sua bateria é testada</p>
+            <h1>Entrega e Instalação <span class="vermelho">GRÁTIS</span><br>em até <span class="vermelho">50 minutos!</span></h1>
+            <p class="hero-sub">Atendemos em Ipatinga e toda a região do Vale do Aço.</p>
+            <div class="hero-tags">
+                <span class="hero-tag">⚡ Cobrimos qualquer oferta</span>
+                <span class="hero-tag">💳 Parcelamos em até 10x sem juros</span>
+            </div>
+            <div class="hero-buttons">
+                <a href="https://wa.me/5531999999999" class="btn-primary">Pedir agora</a>
+                <a href="tel:+553138275484" class="btn-outline-dark">📞 (31) 3827-8484</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="branding_id_visual/fachada so baterias.png" alt="Loja Só Baterias — Ipatinga MG">
+            <div class="hero-phone-badge">📞 (31) 3827-8484</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FACHADA MOBILE (só aparece no mobile) ===== -->
+<div class="fachada-mobile">
+    <img src="branding_id_visual/fachada so baterias.png" alt="Loja Só Baterias — Ipatinga MG">
+</div>
+
+<!-- ===== FEATURE STRIP ===== -->
+<div class="feature-strip">
+    <div class="feature-strip-inner">
+        <div class="feature-item"><div class="feature-icon">🚚</div><span>Entrega &amp; instalação grátis</span></div>
+        <div class="feature-item"><div class="feature-icon">💰</div><span>Preços competitivos</span></div>
+        <div class="feature-item"><div class="feature-icon">🔍</div><span>Checkup elétrico gratuito</span></div>
+        <div class="feature-item"><div class="feature-icon">🛡️</div><span>Garantia de fábrica</span></div>
+    </div>
+</div>
+
+<!-- ===== COMO FUNCIONA ===== -->
+<section class="section" id="como-funciona">
+    <div class="section-inner">
+        <p class="section-label">Simples e rápido</p>
+        <h2 class="section-title">Como funciona</h2>
+        <p class="section-sub">Do contato até a troca, tudo sem complicação.</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>Fale com a gente</h3>
+                <p>Entre em contato com a Só Baterias, informe o seu veículo e endereço. Nosso técnico já é acionado para atendimento.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>Atendimento profissional</h3>
+                <p>Um técnico especializado vai até você e realiza testes completos na bateria. Você só compra se for comprovado defeito, evitando gastos desnecessários.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>Veículo pronto para rodar</h3>
+                <p>Se o problema for a bateria, fazemos a troca na hora. Caso não seja, o atendimento é uma cortesia da Só Baterias — você não paga nada.</p>
+            </div>
+        </div>
+        <div class="cta-center">
+            <a href="https://wa.me/5531999999999" class="btn-primary">Pedir agora</a>
+            <a href="tel:+553138275484" class="btn-yellow">📞 Ligar Agora</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== NOSSAS BATERIAS ===== -->
+<section class="section" id="baterias" style="background: var(--amarelo-claro);">
+    <div class="section-inner">
+        <p class="section-label">Entrega e instalação grátis</p>
+        <h2 class="section-title">Nossas Baterias</h2>
+        <p class="section-sub">Trabalhamos com todos os tipos de baterias para seu veículo ou equipamento.</p>
+        <div class="baterias-grid">
+            <div class="bateria-card"><span class="bateria-icon">🚗</span><h3>Bateria para carro</h3></div>
+            <div class="bateria-card"><span class="bateria-icon">🚚</span><h3>Bateria para caminhão</h3></div>
+            <div class="bateria-card"><span class="bateria-icon">🏍️</span><h3>Bateria para moto</h3></div>
+            <div class="bateria-card"><span class="bateria-icon">🔋</span><h3>Bateria estacionária</h3></div>
+            <div class="bateria-card"><span class="bateria-icon">🏗️</span><h3>Bateria para máquinas pesadas</h3></div>
+            <div class="bateria-card"><span class="bateria-icon">💡</span><h3>Bateria para luz de emergência</h3></div>
+            <div class="bateria-card"><span class="bateria-icon">⚡</span><h3>Bateria tracionária</h3></div>
+            <div class="bateria-card"><span class="bateria-icon">🔄</span><h3>Start-Stop AGM/EFB</h3></div>
+        </div>
+        <div class="cta-center">
+            <a href="https://wa.me/5531999999999" class="btn-primary">Pedir agora</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MARCAS ===== -->
+<section class="marcas">
+    <h2 class="marcas-title">As melhores marcas do mercado</h2>
+    <p class="marcas-sub">Trabalhamos com as principais fabricantes de baterias do Brasil</p>
+    <div class="marcas-wrapper">
+        <div class="marcas-track">
+            <img src="moura-logo-1.png" alt="Moura">
+            <img src="logotipo-tudor-1.png" alt="Tudor">
+            <img src="image-32.png" alt="PowerTek">
+            <img src="image-15.png" alt="Freedom Estacionária">
+            <img src="raiom-removebg-preview.png" alt="Raiom">
+            <img src="heliar-logo-1.png" alt="Heliar">
+            <img src="moura-logo-1.png" alt="Moura">
+            <img src="logotipo-tudor-1.png" alt="Tudor">
+            <img src="image-32.png" alt="PowerTek">
+            <img src="image-15.png" alt="Freedom Estacionária">
+            <img src="raiom-removebg-preview.png" alt="Raiom">
+            <img src="heliar-logo-1.png" alt="Heliar">
+        </div>
+    </div>
+</section>
+
+<!-- ===== SOBRE NÓS ===== -->
+<section class="section sobre" id="sobre">
+    <div class="section-inner">
+        <p class="section-label">Nossa história</p>
+        <h2 class="section-title">Conheça a Só Baterias</h2>
+        <p class="section-sub">Referência no Vale do Aço em baterias automotivas e estacionárias.</p>
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-num">+3</span>
+                <span class="stat-label">Lojas</span>
+                <span class="stat-desc">Cobrimos todo o Vale do Aço</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">+15</span>
+                <span class="stat-label">Anos de experiência</span>
+                <span class="stat-desc">No setor de baterias</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">+10k</span>
+                <span class="stat-label">Clientes satisfeitos</span>
+                <span class="stat-desc">Referência em Ipatinga e região</span>
+            </div>
+        </div>
+        <div class="cta-center">
+            <a href="https://wa.me/5531999999999" class="btn-white">Pedir agora</a>
+            <a href="tel:+553138275484" class="btn-yellow">📞 Ligar Agora</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<section class="section">
+    <div class="section-inner">
+        <p class="section-label">Avaliações Google</p>
+        <h2 class="section-title">O que nossos clientes dizem</h2>
+        <p class="section-sub"> </p>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-author">Rodrigo Oliveira</div>
+                <div class="review-date">Editado 2 anos atrás</div>
+                <div class="review-text">Essa loja é muito boa, entrega, os funcionários que me atenderam foram super atenciosos!!! Recomendo essa empresa, pode comprar sem medo...</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-author">MarioD'Sonia Rodrigues</div>
+                <div class="review-date">2 anos atrás</div>
+                <div class="review-text">Qualidade, atendimento atencioso. Não se trata apenas de vender, mas de atender a necessidade do cliente que na hora que precisa tem a consultoria do melhor produto a oferecer. Recomendo</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-author">Lucas Costa</div>
+                <div class="review-date">Editado 4 anos atrás</div>
+                <div class="review-text">Precisei de uma bateria para meu carro, fui muito bem recebido, além da substituição com ótimo preço, constataram um problema no alternador sem custo adicional. Parabéns à Só Baterias e toda a equipe!</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== NOSSA LOJA ===== -->
+<section class="section loja">
+    <div class="loja-inner">
+        <div class="loja-info">
+            <p class="loja-label">Visite-nos</p>
+            <h2>Conheça nossa loja</h2>
+            <p class="loja-sub">Venha nos fazer uma visita!</p>
+            <div class="loja-address">
+                <span class="loja-address-icon">📍</span>
+                <span>Av. Brasil, 525 - Iguaçu, Ipatinga - MG</span>
+            </div>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a href="https://wa.me/5531999999999" class="btn-primary">Pedir agora</a>
+                <a href="tel:+553138275484" class="btn-outline-dark">📞 Ligar Agora</a>
+            </div>
+        </div>
+        <div class="loja-map-wrap">
+            <iframe
+                src="https://maps.google.com/maps?q=Av.+Brasil,+525,+Ipatinga,+MG&output=embed&hl=pt-BR"
+                allowfullscreen=""
+                loading="lazy"
+                title="Localização Só Baterias">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CIDADES ATENDIDAS ===== -->
+<section class="section">
+    <div class="section-inner">
+        <p class="section-label">Área de atendimento</p>
+        <h2 class="section-title">Cidades atendidas</h2>
+        <p class="section-sub">Consulte disponibilidade para entrega</p>
+        <div class="cidades-grid">
+            <div class="cidade-pill"><span class="cidade-pin">📍</span> Ipatinga</div>
+            <div class="cidade-pill"><span class="cidade-pin">📍</span> Coronel Fabriciano</div>
+            <div class="cidade-pill"><span class="cidade-pin">📍</span> Timóteo</div>
+            <div class="cidade-pill"><span class="cidade-pin">📍</span> Santana do Paraíso</div>
+            <div class="cidade-pill"><span class="cidade-pin">📍</span> Ipaba</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+    <h2>PARCELAMOS EM ATÉ 10X SEM JUROS</h2>
+    <p>Entrega e Instalação GRÁTIS em até 50 minutos!</p>
+    <p>Antes da troca a sua bateria é testada.</p>
+    <p><strong>COBRIMOS QUALQUER OFERTA!</strong></p>
+    <div class="cta-banner-btns">
+        <a href="https://wa.me/5531999999999" class="btn-white">Pedir agora</a>
+        <a href="tel:+553138275484" class="btn-yellow-outline">📞 Ligar Agora</a>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq" style="background: var(--cinza-claro);">
+    <div class="section-inner">
+        <p class="section-label">Tire suas dúvidas</p>
+        <h2 class="section-title">Perguntas frequentes</h2>
+        <p class="section-sub"> </p>
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <div class="faq-q">Qual o tempo de entrega? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Nosso tempo médio é de 30 a 50 minutos.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Vocês fazem checkup elétrico? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Sim! Realizamos um diagnóstico completo antes da troca para garantir que o problema é realmente a bateria.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Se não for bateria, eu pago algo? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Não. O checkup é totalmente gratuito.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Quais marcas vocês trabalham? <span class="faq-icon">+</span></div>
+                <div class="faq-a">
+                    Trabalhamos com as principais marcas do mercado, como:
+                    <ul>
+                        <li>Moura</li>
+                        <li>Heliar</li>
+                        <li>AC Delco</li>
+                        <li>Entre outras</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Quais tipos de baterias vocês atendem? <span class="faq-icon">+</span></div>
+                <div class="faq-a">
+                    <ul>
+                        <li>Carro</li><li>Moto</li><li>Caminhão</li>
+                        <li>Máquinas pesadas</li><li>Estacionárias</li>
+                        <li>Start-Stop AGM/EFB</li><li>Energia e emergência</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Quanto custa uma bateria? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Trabalhamos com preços competitivos e cobrimos ofertas. Entre em contato para orçamento.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">A entrega é gratuita? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Sim! Entrega e instalação são 100% grátis.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Formas de pagamento <span class="faq-icon">+</span></div>
+                <div class="faq-a">
+                    <ul>
+                        <li>Dinheiro</li>
+                        <li>PIX</li>
+                        <li>Cartão de crédito (até 10x sem juros)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">As baterias têm garantia? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Sim! Garantia de fábrica de 6 a 24 meses, conforme o modelo.</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== GOOGLE REVIEW CTA ===== -->
+<div class="google-cta">
+    <p>Avalie a Só Baterias no Google! Deixe seu comentário e ajude mais pessoas a conhecerem nosso serviço.</p>
+    <a href="https://g.page/r/SUBSTITUA-PELO-LINK" target="_blank" class="btn-google">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18" height="18">
+            <path fill="#EA4335" d="M24 9.5c3.5 0 6.3 1.3 8.4 3.3l6.2-6.2C34.7 2.8 29.8 0 24 0 14.8 0 6.9 5.4 3 13.3l7.3 5.7C12.1 13.3 17.6 9.5 24 9.5z"/>
+            <path fill="#34A853" d="M46.9 24.6c0-1.7-.1-3-.4-4.4H24v8.3h13.1c-.6 3-2.3 5.6-4.9 7.4l7.5 5.8C43.9 37.8 46.9 31.7 46.9 24.6z"/>
+            <path fill="#4A90D9" d="M10.3 29C9.8 27.5 9.5 25.8 9.5 24s.3-3.5.8-5L3 13.3A24 24 0 0 0 0 24c0 3.9.9 7.5 2.5 10.8l7.8-5.8z"/>
+            <path fill="#FBBC05" d="M24 48c5.9 0 10.9-2 14.5-5.4l-7.5-5.8c-2 1.4-4.6 2.2-7 2.2-6.4 0-11.9-3.8-13.7-9.3l-7.8 5.8C6.9 42.6 14.8 48 24 48z"/>
+        </svg>
+        Avaliar no Google
+    </a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <img src="branding_id_visual/logo hd.png" alt="Só Baterias">
+        </div>
+        <div class="footer-links">
+            <a href="#">Política de Privacidade e Termos de Uso</a>
+            <a href="https://wa.me/5531999999999">Fale Conosco</a>
+        </div>
+        <p class="footer-copy">© 2024 Só Baterias — Limoeiro Baterias. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOATING ===== -->
+<a href="https://wa.me/5531999999999" class="wa-float" target="_blank" title="Fale pelo WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('open');
+    }
+    document.querySelectorAll('#navLinks a').forEach(a => {
+        a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const id = a.getAttribute('href');
+            if (id === '#') return;
+            const target = document.querySelector(id);
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+</script>
+
+</body>
+</html>
