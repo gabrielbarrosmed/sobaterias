@@ -1,0 +1,100 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Arial;}}
+{\colortbl;\red0\green0\blue0;}
+\f0\fs24
+
+\b\fs32 Google Ads API Tool Design Document\b0\fs24
+\par
+\par
+\b Company:\b0  SO Baterias Iguacu LTDA
+\par
+\b Website:\b0  https://www.sobaterias.com.br/
+\par
+\b MCC Account:\b0  113-161-9139
+\par
+\b Contact:\b0  sobateriasiguacu@gmail.com
+\par
+\par
+
+\b\fs28 1. Tool Overview\b0\fs24
+\par
+\par
+This is an internal campaign performance reporting tool built exclusively for SO Baterias Iguacu LTDA. The tool automates the extraction and analysis of Google Ads campaign data for the company's own advertising account (Customer ID: 677-179-5003).
+\par
+\par
+
+\b\fs28 2. Purpose\b0\fs24
+\par
+\par
+The tool is designed to:
+\par
+- Retrieve campaign performance metrics (impressions, clicks, CTR, cost, conversions)
+\par
+- Identify top and underperforming keywords
+\par
+- Generate weekly and monthly performance summaries
+\par
+- Support internal budget optimization decisions
+\par
+\par
+
+\b\fs28 3. Technical Design\b0\fs24
+\par
+\par
+\b Language:\b0  Python 3
+\par
+\b Library:\b0  google-ads (official Google Ads Python client library)
+\par
+\b Authentication:\b0  OAuth 2.0 with offline refresh token
+\par
+\b Data Access:\b0  Read-only queries via GoogleAdsService using GAQL
+\par
+\b Storage:\b0  Local CSV files and optional Google Sheets export
+\par
+\par
+
+\b\fs28 4. Data Flow\b0\fs24
+\par
+\par
+1. Python script authenticates using OAuth 2.0 credentials
+\par
+2. GAQL queries fetch campaign, ad group, keyword, and ad performance data
+\par
+3. Data is processed and stored locally as CSV reports
+\par
+4. Reports are reviewed internally by the marketing team
+\par
+\par
+
+\b\fs28 5. Access Scope\b0\fs24
+\par
+\par
+- \b Users:\b0  Internal only (owner and marketing staff of SO Baterias)
+\par
+- \b Accounts accessed:\b0  Single advertiser account (677-179-5003) managed via MCC (113-161-9139)
+\par
+- \b Operations:\b0  Read-only (no campaign creation, modification, or deletion)
+\par
+- \b No third-party access:\b0  The tool is not distributed or shared externally
+\par
+\par
+
+\b\fs28 6. API Endpoints Used\b0\fs24
+\par
+\par
+- GoogleAdsService.Search (GAQL queries)
+\par
+- Resources: campaign, ad_group, keyword_view, ad_group_ad, campaign_budget
+\par
+\par
+
+\b\fs28 7. Compliance\b0\fs24
+\par
+\par
+- All data is used solely for internal performance analysis
+\par
+- No user data is collected or shared with third parties
+\par
+- The tool complies with Google Ads API Terms of Service
+\par
+}

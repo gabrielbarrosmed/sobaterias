@@ -1,0 +1,305 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-03-26 12:00:00",
+  "containerVersion": {
+    "path": "accounts/0/containers/0/versions/0",
+    "accountId": "0",
+    "containerId": "0",
+    "containerVersionId": "0",
+    "container": {
+      "path": "accounts/0/containers/0",
+      "accountId": "0",
+      "containerId": "0",
+      "name": "So Baterias",
+      "publicId": "GTM-KGMD5DZ5",
+      "usageContext": ["WEB"]
+    },
+    "variable": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "1",
+        "name": "GA4 - Measurement ID",
+        "type": "c",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "value", "value": "G-2K8MLJKGNY"}
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "2",
+        "name": "Google Ads - Conversion ID",
+        "type": "c",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "value", "value": "AW-872717367"}
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "3",
+        "name": "Google Ads - Conversion Label",
+        "type": "c",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "value", "value": "cQ5NCJyYopAcELe4kqAD"}
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "5",
+        "name": "Google Ads - Label - WhatsApp Click",
+        "type": "c",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "value", "value": "OYqMCJbA15IcELe4kqAD"}
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "6",
+        "name": "Google Ads - Label - Telefone Click",
+        "type": "c",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "value", "value": "TXIGCMqaz5IcELe4kqAD"}
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "4",
+        "name": "CJS - Nome da Secao",
+        "type": "jsm",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "javascript",
+            "value": "function() { try { var el = document.activeElement || null; if (!el) return 'desconhecido'; var section = el.closest('section'); if (!section) { if (el.closest('nav') || el.closest('.nav-wrapper')) return 'navegacao'; if (el.closest('footer')) return 'rodape'; if (el.classList && el.classList.contains('wa-float')) return 'flutuante'; return 'fora-de-secao'; } if (section.id) return section.id; var c = section.className || ''; if (c.indexOf('hero') > -1) return 'hero'; if (c.indexOf('cta-banner') > -1) return 'cta-banner'; if (c.indexOf('marcas') > -1) return 'marcas'; if (c.indexOf('loja') > -1) return 'loja'; if (c.indexOf('sobre') > -1) return 'sobre'; return 'secao-sem-id'; } catch(e) { return 'erro-js'; } }"
+          }
+        ]
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "1",
+        "name": "All Pages",
+        "type": "PAGEVIEW"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "2",
+        "name": "Click - WhatsApp",
+        "type": "LINK_CLICK",
+        "filter": [
+          {
+            "type": "CONTAINS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "wa.me"}
+            ]
+          }
+        ],
+        "parameter": [
+          {"type": "BOOLEAN", "key": "waitForTags", "value": "true"},
+          {"type": "BOOLEAN", "key": "checkValidation", "value": "false"},
+          {"type": "TEMPLATE", "key": "waitForTagsTimeout", "value": "2000"}
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "3",
+        "name": "Click - Ligar",
+        "type": "LINK_CLICK",
+        "filter": [
+          {
+            "type": "CONTAINS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "tel:"}
+            ]
+          }
+        ],
+        "parameter": [
+          {"type": "BOOLEAN", "key": "waitForTags", "value": "true"},
+          {"type": "BOOLEAN", "key": "checkValidation", "value": "false"},
+          {"type": "TEMPLATE", "key": "waitForTagsTimeout", "value": "2000"}
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "4",
+        "name": "Scroll Depth - 25 50 75 90%",
+        "type": "SCROLL_DEPTH",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "verticalThresholdUnits", "value": "PERCENT"},
+          {"type": "TEMPLATE", "key": "verticalThresholds", "value": "25,50,75,90"}
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "5",
+        "name": "Timer - 30 segundos",
+        "type": "TIMER",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "interval", "value": "30000"},
+          {"type": "TEMPLATE", "key": "limit", "value": "1"}
+        ]
+      }
+    ],
+    "tag": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "1",
+        "name": "GA4 - Configuracao",
+        "type": "gaawc",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "measurementId", "value": "{{GA4 - Measurement ID}}"},
+          {"type": "BOOLEAN", "key": "sendPageView", "value": "true"}
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "4",
+        "name": "GA4 - Evento - WhatsApp Click",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "whatsapp_click"},
+          {"type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{GA4 - Measurement ID}}"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "secao"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{CJS - Nome da Secao}}"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "link_text"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Click Text}}"}
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "5",
+        "name": "GA4 - Evento - Ligar",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "phone_click"},
+          {"type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{GA4 - Measurement ID}}"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "secao"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{CJS - Nome da Secao}}"}
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "link_text"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Click Text}}"}
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "6",
+        "name": "GA4 - Evento - Scroll Depth",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "scroll"},
+          {"type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{GA4 - Measurement ID}}"},
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {"type": "TEMPLATE", "key": "name", "value": "percent_scrolled"},
+                  {"type": "TEMPLATE", "key": "value", "value": "{{Scroll Depth Threshold}}"}
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "8",
+        "name": "Google Ads - Conversão - WhatsApp Click",
+        "type": "awct",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "conversionId", "value": "872717367"},
+          {"type": "TEMPLATE", "key": "conversionLabel", "value": "{{Google Ads - Label - WhatsApp Click}}"},
+          {"type": "TEMPLATE", "key": "currencyCode", "value": "BRL"}
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "9",
+        "name": "Google Ads - Conversão - Telefone Click",
+        "type": "awct",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "conversionId", "value": "872717367"},
+          {"type": "TEMPLATE", "key": "conversionLabel", "value": "{{Google Ads - Label - Telefone Click}}"},
+          {"type": "TEMPLATE", "key": "currencyCode", "value": "BRL"}
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "7",
+        "name": "GA4 - Evento - 30s na Pagina",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "eventName", "value": "time_on_page_30s"},
+          {"type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{GA4 - Measurement ID}}"}
+        ],
+        "firingTriggerId": ["5"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      }
+    ]
+  }
+}

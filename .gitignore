@@ -1,6 +1,19 @@
-CLAUDE.md
-branding_id_visual/*.txt
-copy da pagina.txt
-limoeirobaterias.com.br_ipatinga.png
-.tmp/
+# Dependências
+node_modules/
+
+# Credenciais e tokens sensíveis
+token-ga4.json
+token*.json
+credentials.json
+google-ads.yaml
+*.env
 .env
+
+# Banco de dados local
+*.db
+gtm_database.db
+
+# Temporários
+temporary screenshots/
+Correção bugs/
+*.log
